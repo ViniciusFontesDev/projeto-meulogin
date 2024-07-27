@@ -8,48 +8,40 @@
 
 body, html{
     background-color: lightblue;
-    height: 100vh;
     width: 100vw;
+    height: 100vh;
 }
 
 main{
-    position: relative; /*Organizando para colocar no centro a section*/
-    height: 100vh;
+    position: relative; /*Para ajudar a centralizar*/
     width: 100vw;
+    height: 100vh;
 }
 
 section#login{
-    /*Colocando no centro a section*/
+    /*Centralização da section*/
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-
-    /*Personalizando a section*/
+    /*Personalização da section*/
     background-color: white;
-    width: 250px;
-    height: 515px;
     border-radius: 20px;
-    box-shadow: 0px 0px 10px black;
-
-    /*Transição dessa posição*/
-    transition: width .3s height .3s;
-    transition-timing-function: ease;
-
-    /*Usei para esconder a parte de um elemento para que ele não passe do tamanho determinado - NO CASO É POR EXEMPLO AS BORDAR, PRA NADA SAIR DAR BORDAS*/
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.7);
+    height: 470px;
+    width: 280px;
+    /*para não deixar sair nada da borda*/
     overflow: hidden;
 }
 
-section#login > div#imagem{
-    display: block; /*só para confirmar o display block*/
-    background: black url(#) no-repeat;
-    background-position: top center;
-    background-size: cover;
-    height: 200px; /*é para definir o tamanho que a imagem vai cobrir a section, tendo em vista que aqui ela vai ficar em cima da div#formulario*/
+div#imagem{
+    background-color: black;
+    display: block;/*no div#imagem e no div#formulario que estão dentro da section#login eu preciso colocar o display block para manusear a posição a imagem no media-query*/
+    height: 40%;
 }
 
-section#login > div#formulario{
-    display: block;/*só para confirmar o tipo de display*/
+div#formulario{
+    display: block;/*no div#imagem e no div#formulario que estão dentro da section#login eu preciso colocar o display block para manusear a posição a imagem no media-query*/
     padding: 10px;
 }
 
@@ -58,22 +50,94 @@ div#formulario > h1{
     margin-bottom: 10px;
 }
 
-form > div.campo{ /*AQUI ESTOU EDITANDO O FUNDO DO INPUT E DO LABEL*/
-    background-color: aliceblue;
-    border: 2px solid black;
-    display: block;
-    width: 100%;
-    height: 40px;
-    border-radius: 8px;
-    margin: 5px 0px;
+div#formulario>p{
+    margin-bottom: 10px;
 }
 
-div.campo > input{/*AQUI ESTOU EDITANDO APENAS O QUADRADO DO INPUT*/
-    background-color: aqua;
-    font-size: 1em;
-    width: 182px;
-    height: 40px;
-    border: 0px;
+form > div.campo > label{
+    display: none; /*Aqui eu tirei os labels de aparecerem na tela inicial. VOU SUBSTITUIR PELO ÍCONES QUE VIERAM PELO SPAN.*/
+}
+
+form > div.campo{
+    position: relative;/*utilizei esse position para facilitar o posicionamento*/
+    /*PERSONALIZAÇÃO DA DIV.CAMPO*/
+    background-color: yellow;
+    border: 1px solid black;
+    /*POSIÇÃO DA DIV.CAMPO*/
+    display: block;
+    width: 100%; /*definindo a largura*/
+    height: 30px;/*definindo a altura*/
     border-radius: 8px;
-    padding: 0px;
+    margin: 5px 0px; /*estou definindo a distância de cima e de baixo (espaço)*/
+}
+
+form > div.campo > input{ /*CASO VOCÊ NÃO TENHA ENTENDIDO: Estou tentando enquadrar esse input exatamente no div.campo para ficar mais bonitinho.*/
+    /*Personalização do retangulo do input*/
+    background-color: white;
+    width: calc(100% - 44px);/*Largura (tamanho) do retângulo*/
+    height: 100%;/*definindo a altura (tamanho) do retângulo */
+    border: 0px;/*defini que o retângulo não terá borda*/
+    border-radius: 0px 8px 0px 0px;/*defini que o border-radius terá o mesmo tamanho que o div.campo. DEPOIS ESTILIZEI.*/
+    /*Posicionamento do retângulo do input*/
+    position: absolute;/*utilizei esse position para facilidar o posicionamento*/
+    transform: translate(2px, 0px);/*Estou definindo a altura (posição) estou subindo a posição para se enquadrad dentro da div e ainda ficar bonita*/
+    font-size: 1em;/*AQUI EU SIMPLESMENTE AUMENTEI A LETRAQUE APARECERÁ DENTRO DESSE RETÂNGULO*/
+}
+
+div.campo > input:focus-within{
+    background-color: black;
+    color: yellow;
+    border: none;
+}
+
+form > div.campo > span{
+    padding: 2px 9px;/*Aqui eu posicionai o span (os ícones) para eles ficarem certinho e não atrapalharem o resto que já fiz. // eu deveria ter colocado antes para facilitar.*/
+}
+
+form > input[type=submit]{
+    display: block; /*Coloco o display block para deixar só ele na linha*/
+    width: 100%; /*estou definindo a largura(tamanho) do botão submit enviar*/
+    height: 40px; /*estou definindo a altura(tamanho) do botão submit enviar*/
+    background-color: black;
+    color: yellow;
+    border: none;/*tirei a borda*/
+}
+
+form>input[type=submit]:hover{
+    background-color: yellow;
+    color: black;
+    border: 1px solid black;
+    transition: background-color 1s, color 1s, border 1s;
+}
+
+form > a.botao{
+    /*AQUI EU VOU CRIAR UM BOTÃO QUE VAI ESTAR O "ESQUECI MINHA SENHA" E O ÍCONE DO EMAIL (SPAN)*/
+    /*Cores primeiro para facilitar a criação do botão*/
+    text-decoration: none;/*Primeiro para lembrar que é apenas um link 'a' que está sendo feito um botão para ele*/
+    background-color: white;
+    color: black;
+    border: 1px solid black;
+    /*Agora a posição, tamanho, o que quiser modificar.*/
+    display: block;/*Para não deixar nada na mesma linha*/
+    text-align: center;/*Centralizar os elementos que estão dentro desse botão (do 'a', tendo em vista que é ele que estou editando, focando na classe botão)*/
+    font-size: 1em;/*Defini o botão das letras*/
+    width: 100%;/*estou definindo a largura(tamanho) do botão que estou criando*/
+    height: 30px;/*estou definindo a altura(tamanho) do botão que estou criando*/
+    padding-top: 5px;
+    margin-top: 5px;
+}
+
+form > a.botao:hover{
+    /*vou determinar o hover aqui*/
+    background-color: lightgray;
+    transition: background-color 1s;
+}
+
+form > a.botao > span{ /*só determinando o tamanho do ícone.*/
+    font-size: 1em;
+}
+
+p#assinatura{ /*Colocando minha marca ali no final*/
+    margin-top: 8px;
+    text-align: center;
 }

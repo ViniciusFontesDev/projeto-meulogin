@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Página de Login Feita por mim</title>
     <link rel="stylesheet" href="estilos/style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 </head>
 <body>
     <main> <!--Esse main é pra ajudar a centralizar a section-->
@@ -17,27 +18,23 @@
                 <p>Seja bem-vindo(a) novamente. Faça login seu login.</p>
                 <form action="" method="post" autocomplete="on"> <!--Esse form é para deixar organizado e colocar o método de armazenamento, o autocomplete e outras personalizações que você quiser para esse formulário que vamos criar. mais para organização.-->
                     <div class="campo"> <!--Essa div foi criada para organização, selecionando e colocando dentro dela apenas 1 input com 1 label-->
+                        <span class="material-symbols-outlined">person</span>
                         <label for="inome">Nome:</label>
                         <input type="text" name="nome" id="inome" placeholder="Nome Completo" autocomplete="name" required maxlength="30">
                     </div>
                     <div class="campo"> <!--Essa div foi criada para organização, selecionando e colocando dentro dela apenas 1 input com 1 label. NOTE QUE A CLASSE CAMPO É IGUAL A OUTRA DIV.CAMPO-->
+                        <span class="material-symbols-outlined">vpn_key</span>
                         <label for="isenha">Senha:</label>
                         <input type="password" name="senha" id="isenha" placeholder="Sua senha" autocomplete="current-password" required minlength="6" maxlength="20">
                     </div>
 
-                    <input type="button" value="Enviar"> <!--Esse botão de enviar ainda está dentro do form.-->
-                    <a href="#"><p>Esqueci minha senha</p></a> <!--Esse Esqueci minha senha é um link para que jogar para outra página, para deixar algo mais completo. -->
-                    <p>&copy; Vinícius Fontes</p>
+                    <input type="submit" value="Enviar"> <!--Esse botão de enviar ainda está dentro do form.-->
+                    <a href="#" class="botao">Esqueci minha senha<span class="material-symbols-outlined">mail</span></a> <!--Esse Esqueci minha senha é um link para que jogar para outra página, para deixar algo mais completo. -->
+                    <p id="assinatura">&copy; Vinícius Fontes</p>
                 </form> <!--Aqui fecha o formulário criado para organização do formulário, input e label-->
             </div> <!--aqui fecha a div formulário criada para organização de toda "metade" do login. com o título e sejam bem vindos.-->
         </section> <!--Aqui se fecha a sessão que tem dentro tanto a imagem quanto a outra div. essa sessão foi usada para posicionar no meio junto com o main.-->
     </main><!--utilizado para colocar um background e posicionar a section-->
-
-    <!-- DEPOIS VOCÊ VINÍCIUS COLOCA ESSA MARCA.
-    <footer>
-        <p>&copy; Vinícius Fontes</p>
-    </footer>
-    -->
 
 </body>
 </html>
