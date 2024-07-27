@@ -1,0 +1,79 @@
+@charset "UTF-8";
+
+*{
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+body, html{
+    background-color: lightblue;
+    height: 100vh;
+    width: 100vw;
+}
+
+main{
+    position: relative; /*Organizando para colocar no centro a section*/
+    height: 100vh;
+    width: 100vw;
+}
+
+section#login{
+    /*Colocando no centro a section*/
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    /*Personalizando a section*/
+    background-color: white;
+    width: 250px;
+    height: 515px;
+    border-radius: 20px;
+    box-shadow: 0px 0px 10px black;
+
+    /*Transição dessa posição*/
+    transition: width .3s height .3s;
+    transition-timing-function: ease;
+
+    /*Usei para esconder a parte de um elemento para que ele não passe do tamanho determinado - NO CASO É POR EXEMPLO AS BORDAR, PRA NADA SAIR DAR BORDAS*/
+    overflow: hidden;
+}
+
+section#login > div#imagem{
+    display: block; /*só para confirmar o display block*/
+    background: black url(#) no-repeat;
+    background-position: top center;
+    background-size: cover;
+    height: 200px; /*é para definir o tamanho que a imagem vai cobrir a section, tendo em vista que aqui ela vai ficar em cima da div#formulario*/
+}
+
+section#login > div#formulario{
+    display: block;/*só para confirmar o tipo de display*/
+    padding: 10px;
+}
+
+div#formulario > h1{
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+form > div.campo{ /*AQUI ESTOU EDITANDO O FUNDO DO INPUT E DO LABEL*/
+    background-color: aliceblue;
+    border: 2px solid black;
+    display: block;
+    width: 100%;
+    height: 40px;
+    border-radius: 8px;
+    margin: 5px 0px;
+}
+
+div.campo > input{/*AQUI ESTOU EDITANDO APENAS O QUADRADO DO INPUT*/
+    background-color: aqua;
+    font-size: 1em;
+    width: 182px;
+    height: 40px;
+    border: 0px;
+    border-radius: 8px;
+    padding: 0px;
+}
