@@ -1,0 +1,65 @@
+@charset "UTF-8";
+
+:root{
+    --cor00: #FF7639;
+    --cor01: #C03C14;
+    --cor02: #8FC8C7;
+    --cor03: #113038;
+    --cor04: #FDE8B3;
+}
+
+/* Typical Device Breakpoints
+------------------------------
+Pequenas telas: até 600px
+Celular: de 600px até 768px
+tablet: 768px até 992px
+Desktop: 992px até 1200px
+Grandes telas: acima de 1200px
+*/
+
+@media screen and (min-width: 768px) and  (max-width: 992px) /*Tablet*/ {
+    section#login{
+        width: 80vw; /*Aqui eu defino o tamanho da section como um todo, e aqui dentro a div#imagem e a div#formulario vão se movimentar, se enquadrar.*/
+    }
+
+    section#login > div#imagem{
+        float: left;/*Aqui estou jogando a imagem para o lado esquerdo. MAS preciso definir o width e o height para dar certo.*/
+        width: 40%;
+        height: 100%;
+    }
+
+    section#login > div#formulario{
+        float: right;/*Aqui estou jogando a parte de login para o lado direito. MAS preciso definir o width para dar certo.*/
+        width: 56%; /*vc precisa ir testando iso daqui... TANTO COM A LARGURA MENOR QUANTO A LARGURA MAIOR, PRESTA A ATENÇÃO NA HORA DE FAZER.*/
+        margin-top: 95px;/*Só coloquei pra centralizar verticalmente (fui testando)*/
+    }
+}
+
+@media screen and (min-width: 992px)/*Telas grandes*/ {
+    section#login{
+        width: 950px;/*Note que defini o tamanho da section#login um pouco menor que o min-width do aparelho... Isso para que ainda fique uma lateral e bem legível mesmo que o aparelho tenha 1Milhão de px no width.*/
+    }
+
+    section#login > div#imagem{
+        float: right; /*para posicionar a imagem no lado direito*/
+        width: 50%; /*para colocar o tamanho da width de 50% da section#login*/
+        height: 100%;/*para colocar a altura preenchendo exatamente o tamanho height da section#login*/
+    }
+
+    section#login > div#formulario{
+        float: left;/*para posicionar o formulario do lado esquerdo*/
+        width: 47%;/*coloquei o width e fui testando até aparecer ali na lateral*/
+        margin-top: 70px;/*fiz para colocar na posição que decidi verticalmente (fui testando até me agradar)*/
+    }
+
+    div#formulario > h1{
+        font-size: 2em;
+    }
+
+    div#formulario > p{
+        font-size: 1.2em;
+        margin: 20px 0px;
+        text-align: center;
+    }
+
+}

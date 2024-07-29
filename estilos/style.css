@@ -1,5 +1,13 @@
 @charset "UTF-8";
 
+:root{
+    --cor00: #FF7639;
+    --cor01: #C03C14;
+    --cor02: #8FC8C7;
+    --cor03: #113038;
+    --cor04: #FDE8B3;
+}
+
 *{
     margin: 0px;
     padding: 0px;
@@ -7,7 +15,7 @@
 }
 
 body, html{
-    background-color: lightblue;
+    background-color: var(--cor02);
     width: 100vw;
     height: 100vh;
 }
@@ -32,10 +40,16 @@ section#login{
     width: 280px;
     /*para não deixar sair nada da borda*/
     overflow: hidden;
+
+    /*PERSONALIZAÇÃO PRA QUANDO FOR PASSAR DE UM TAMANHO PRO OUTRO NO MEDIA QUERY. É para deixar bonitinho na hora de alterar os tamanhos e não passar de uma vez, seco.*/
+    transition: width.3s, height .3s;
+    -o-transition-timing-function: ease;
 }
 
 div#imagem{
     background-color: black;
+    background: url(../imagens/divimg.jpg) no-repeat center center;
+    background-size: cover;
     display: block;/*no div#imagem e no div#formulario que estão dentro da section#login eu preciso colocar o display block para manusear a posição a imagem no media-query*/
     height: 40%;
 }
@@ -50,9 +64,6 @@ div#formulario > h1{
     margin-bottom: 10px;
 }
 
-div#formulario>p{
-    margin-bottom: 10px;
-}
 
 form > div.campo > label{
     display: none; /*Aqui eu tirei os labels de aparecerem na tela inicial. VOU SUBSTITUIR PELO ÍCONES QUE VIERAM PELO SPAN.*/
@@ -61,8 +72,8 @@ form > div.campo > label{
 form > div.campo{
     position: relative;/*utilizei esse position para facilitar o posicionamento*/
     /*PERSONALIZAÇÃO DA DIV.CAMPO*/
-    background-color: yellow;
-    border: 1px solid black;
+    background-color: var(--cor04);
+    border: 1px solid var(--cor01);
     /*POSIÇÃO DA DIV.CAMPO*/
     display: block;
     width: 100%; /*definindo a largura*/
@@ -85,28 +96,30 @@ form > div.campo > input{ /*CASO VOCÊ NÃO TENHA ENTENDIDO: Estou tentando enqu
 }
 
 div.campo > input:focus-within{
-    background-color: black;
-    color: yellow;
+    background-color: var(--cor02);
+    color: var(--cor03);
     border: none;
 }
 
 form > div.campo > span{
     padding: 2px 9px;/*Aqui eu posicionai o span (os ícones) para eles ficarem certinho e não atrapalharem o resto que já fiz. // eu deveria ter colocado antes para facilitar.*/
+    color: var(--cor00);
 }
 
 form > input[type=submit]{
     display: block; /*Coloco o display block para deixar só ele na linha*/
     width: 100%; /*estou definindo a largura(tamanho) do botão submit enviar*/
     height: 40px; /*estou definindo a altura(tamanho) do botão submit enviar*/
-    background-color: black;
-    color: yellow;
+    background-color: var(--cor03);
+    color: var(--cor04);
     border: none;/*tirei a borda*/
+    font-size: 1em; /*tamanho da letra */
 }
 
 form>input[type=submit]:hover{
-    background-color: yellow;
-    color: black;
-    border: 1px solid black;
+    background-color: var(--cor01);
+    color: var(--cor04);
+    border: 1px solid var(--cor03);
     transition: background-color 1s, color 1s, border 1s;
 }
 
@@ -129,7 +142,7 @@ form > a.botao{
 
 form > a.botao:hover{
     /*vou determinar o hover aqui*/
-    background-color: lightgray;
+    background-color: var(--cor04);
     transition: background-color 1s;
 }
 
